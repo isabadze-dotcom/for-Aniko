@@ -1,4 +1,74 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1000 დღე...</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            /* ფოტო ფონად (photo.JPEG) და გამჭვირვალე გამუქება ტექსტისთვის */
+            background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.45)), 
+                        url('photo.JPEG') no-repeat center center/cover;
+            background-attachment: fixed;
+            color: #ffffff;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Georgia, serif;
+            text-align: center;
+            padding: 25px 15px;
+        }
+
+        .container {
+            max-width: 500px;
+            width: 100%;
+            padding: 20px 10px;
+            background: transparent;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 25px;
+            color: #ffffff;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
+        }
+
+        p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: #ffffff;
+            white-space: pre-wrap;
+            font-weight: 400;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9), 0 0 20px rgba(0, 0, 0, 0.7);
+        }
+
+        .signature {
+            margin-top: 30px;
+            font-style: italic;
+            font-size: 1.15rem;
+            color: #f8e1e7;
+            text-align: right;
+            padding-right: 15px;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>1000 დღე...</h1>
+        
+        <p id="text">
 2024 წლის 6 იანვარი... 
 დღე, როდესაც პირველად მითხარი, რომ გიყვარდი. 
 
@@ -11,6 +81,29 @@
 მადლობა ყველაფრისთვის, რაც გვქონდა და იმისთვის, რაც ამ 1000-მა დღემ მასწავლა...
 
 ეს ისტორია არასდროს უნდა დამთავრდეს ❤️
+        </p>
 
+        <div class="signature">
+            სიყვარულით ილია საბაძე
+        </div>
+    </div>
 
-             სიყვარულით ილია საბაძე
+    <audio id="myAudio" loop preload="auto">
+        <source src="song.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        const audio = document.getElementById('myAudio');
+        
+        function startAudio() {
+            if (audio.paused) {
+                audio.play();
+            }
+        }
+
+        window.addEventListener('click', startAudio);
+        window.addEventListener('touchstart', startAudio);
+        window.addEventListener('scroll', startAudio, { once: true });
+    </script>
+</body>
+</html>
